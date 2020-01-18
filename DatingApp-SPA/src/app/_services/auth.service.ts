@@ -20,6 +20,7 @@ return this.http.post(this.baseUrl + 'Login', model).pipe(
     if (user) {
       localStorage.setItem('token', user.token);
       this.decodedToken = this.jwtHelper.decodeToken(user.token);
+      console.log(this.decodedToken);
     }
   })
 );
