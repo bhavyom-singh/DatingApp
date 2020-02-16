@@ -14,7 +14,7 @@ namespace DatingApp.API.Helpers
         public int PageSize
         {
             get { return pageSize; }
-            set { pageSize = (value > MaxPageSize) ? MaxPageSize : value; }
+            set { pageSize = (value > MaxPageSize || value == 0) ? MaxPageSize : value; }
         }
 
         public int UserId { get; set; }
@@ -24,6 +24,8 @@ namespace DatingApp.API.Helpers
         public int MinAge { get; set; } = 18;
         public int MaxAge { get; set; } = 99;
         public string OrderBy { get; set; }
+        public bool Likees { get; set; } = false;
+        public bool Likers { get; set; } = false;
 
     }
 }
